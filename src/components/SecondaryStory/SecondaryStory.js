@@ -46,7 +46,7 @@ const Heading = styled.h2`
   font-weight: var(--font-weight-bold);
   line-height: 1.3;
   /* Optical alignment */
-  margin-top: -2px;
+  margin-top: -${6/16}rem;
 
   @media ${QUERIES.tabletOnly} {
     margin-top: revert;
