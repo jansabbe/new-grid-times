@@ -174,11 +174,14 @@ const TopNavList = styled.ul`
 `;
 
 const MainNavArea = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 32px;
   padding: 32px 0 48px;
   text-align: center;
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-columns: repeat(auto-fit, minmax(${200/16}rem, 1fr));
+    text-align: start;
+  }
 `;
 
 const MainNavHeading = styled.h2`
