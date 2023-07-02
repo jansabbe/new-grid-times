@@ -1,33 +1,38 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import {QUERIES} from "../../constants";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
-    <a href={`/story/${id}`}>
+    <ALink href={`/story/${id}`}>
       <Wrapper>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
         <Abstract>{abstract}</Abstract>
       </Wrapper>
-    </a>
+    </ALink>
   );
 };
 
+const ALink = styled.a`
+  container: secondary-story / inline-size;
+`;
+const narrowStory = `secondary-story (max-width: ${300/16}rem)`;
+
 const Wrapper = styled.article`
   display: grid;
-  grid-template-areas:
-    'image heading'
-    'image abstract';
   gap: 4px 16px;
-  grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
+  grid-template-columns: 120px 1fr;
+  grid-template-areas:
+      'image heading'
+      'image abstract';
   
-  @media ${QUERIES.tabletOnly} {
+  @container ${narrowStory} {
+    grid-template-columns: 1fr;
     grid-template-areas:
-    'image image'
-    'heading heading'
-    'abstract abstract';
+      'image'
+      'heading'
+      'abstract';
   }
 `;
 
@@ -46,11 +51,12 @@ const Heading = styled.h2`
   font-weight: var(--font-weight-bold);
   line-height: 1.3;
   /* Optical alignment */
-  margin-top: -${6/16}rem;
-
-  @media ${QUERIES.tabletOnly} {
+  margin-top: -2px;
+  
+  @container ${narrowStory} {
     margin-top: revert;
   }
+
 `;
 
 const Abstract = styled.p`
