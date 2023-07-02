@@ -56,7 +56,7 @@ const Wrapper = styled.div`
   margin-bottom: 48px;
   
   @media ${QUERIES.tabletAndUp} {
-    gap: 16px;
+    gap: 48px 16px ;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
     'main-story secondary-stories'
@@ -65,7 +65,6 @@ const Wrapper = styled.div`
   }
 
   @media ${QUERIES.laptopAndUp} {
-    gap: 32px;
     grid-template-columns: 4fr 3fr 2fr;
     grid-template-areas:
     'main-story secondary-stories opinion-stories'
@@ -121,7 +120,7 @@ const OpinionSection = styled.section`
     }
   }
   @media ${QUERIES.laptopAndUp} {
-    margin-top: -${10/16}rem;
+    margin-top: -8px;
   }
 `;
 
