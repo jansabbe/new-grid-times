@@ -77,27 +77,21 @@ const ActionGroup = styled.div`
 `;
 
 
-const MainActionGroup = styled.div`
+const MainActionGroup = styled(ActionGroup)`
   display: none;
-  margin-right: auto;
-  gap: 24px;
 
   @media ${QUERIES.laptopAndUp} {
     display: flex;
-  }
-
-  svg {
-    display: block;
   }
 `;
 
 const MainSubscriber = styled.div`
   display: none;
   flex-direction: column;
-  margin-left: auto;
   gap: 8px;
   align-items: center;
-
+  justify-self: end;
+  
   @media ${QUERIES.laptopAndUp} {
     display: flex;
   }
@@ -113,6 +107,19 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+  
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: 48px;
+    margin-bottom: 72px;
+  }
+  
+  @media ${QUERIES.laptopAndUp} {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+    justify-content: revert;
+    margin-top: 16px;
+  }
 `;
 
 const Link = styled.a`
